@@ -14,6 +14,10 @@ app.use(express.json());
 const appID = process.env.ZEGO_APP_ID;
 const serverSecret = process.env.ZEGO_SERVER_SECRET;
 
+app.get("/", (req, res) => {
+  res.send("ZEGOCLOUD token server is running ✅");
+});
+
 app.get('/api/get-token', async (req, res) => {
   const { roomID, userID, userName } = req.query;
 
